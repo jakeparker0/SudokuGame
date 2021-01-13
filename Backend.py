@@ -8,11 +8,11 @@ Created on Mon Dec 14 18:58:27 2020
 
 # BackEnd
 
-def transpose(m):
+def transpose(m): # Transpose a matrix
     return [[m[j][i] for j in range(len(m))] for i in range(len(m[0]))]
 
 
-def sequence(l):
+def sequence(l):#checks that sequence is correct, May not be needed anymore
     for i in range(1, 10):
         if i not in l or l.count(i) != 1:
             return False
@@ -90,10 +90,11 @@ class Board:
         return out
 
     def completed(self):
+        #TODO: Rename variables to more useful names
         boxes = []
-        for x in range(0, 2):
+        for i in range(0, 2):
             for j in range(0, 2):
-                p = self.grid[x * 3:(x * 3) + 3]
+                p = self.grid[i * 3:(i * 3) + 3]
                 temp = []
                 for l in p:
                     temp += l[j * 3:(j * 3) + 3]
